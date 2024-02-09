@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<IsPublishable>true</IsPublishable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Sag.Framework.Web" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Azure" Version="1.6.3" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Polly" Version="7.2.3" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Sag.Service.Vacancies.Application\Sag.Service.Vacancies.Application.csproj" />
+	  <ProjectReference Include="..\Sag.Service.Vacancies.Infrastructure\Sag.Service.Vacancies.Infrastructure.csproj" />
+	</ItemGroup>
+</Project>

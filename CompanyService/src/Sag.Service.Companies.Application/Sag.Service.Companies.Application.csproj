@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sag.Service.Companies.Domain\Sag.Service.Companies.Domain.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Sag.Framework.EntityFramework" Version="1.0.0" />
+		<PackageReference Include="Sag.Framework.ESB" Version="1.0.0" />
+		<PackageReference Include="Sag.Framework.Validation" Version="1.0.0" />
+	</ItemGroup>
+
+</Project>

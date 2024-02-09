@@ -1,0 +1,17 @@
+<Project>
+	<PropertyGroup>
+		<LangVersion>latest</LangVersion>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<CodeAnalysisRuleSet>..\..\.sonarlint\sagsoftware_sagCompany Servicecsharp.ruleset</CodeAnalysisRuleSet>
+		<NoWarn>$(NoWarn);1591;CA2254</NoWarn>
+		<IsPublishable>false</IsPublishable>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include="..\..\.sonarlint\sagsoftware_sagCompany Servicebackend\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+	</ItemGroup>
+
+</Project>
