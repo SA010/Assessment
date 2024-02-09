@@ -18,8 +18,8 @@ docker compose -f .\docker-all.yml up -d
 
 The docker-all.yml file configures the following services:
 
-* sa010/sag-company-service-api - A sample company service. The code is located in .\SagServices\CompanyService\.
-* sa010/sag-vacancy-service-api - A sample vacancy service. The code is located in .\SagServices\VacancyService\.
+* sa010/sag-company-service-api - A sample company service. The code is located in .\CompanyService\.
+* sa010/sag-vacancy-service-api - A sample vacancy service. The code is located in .\VacancyService\.
 * MS SQL server 2019 - The database service.
 * RabbitMQ - The message broker service.
 
