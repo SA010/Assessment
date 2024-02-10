@@ -7,7 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace Sag.Service.Vacancies.Api.Controllers
 {
     [ApiController]
-    [Authorize]
+    // For demo purpose [Authorize]
     [ApiVersion("1.0")]
     [Route("[controller]")]
     [Produces("application/json")]

@@ -1,10 +1,6 @@
-﻿using Sag.Framework.Application.Common;
-using Sag.Framework.ExceptionHandlers;
-using Sag.Framework.Extensions;
+﻿using Sag.Framework.ExceptionHandlers;
 using Sag.Service.Vacancies.Application.Interfaces;
 using Sag.Service.Vacancies.Models.Dtos;
-using Sag.Service.Vacancies.Models.Enums;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Sag.Service.Vacancies.Api.Controllers

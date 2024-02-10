@@ -8,8 +8,10 @@ namespace Sag.Service.Companies.Application.Mappings
             where T : Entity
             where TDto : Dto<T>
         {
-            var dtos = dtoCollection.ToList();
+            if (dtoCollection == null || !dtoCollection.Any()) { return; }
 
+            var dtos = dtoCollection.ToList();
+            
             foreach (var dto in dtos)
             {
                 if (dto.Id == Guid.Empty)
