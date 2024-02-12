@@ -6,18 +6,18 @@ using Microsoft.Extensions.Logging;
 
 namespace Sag.Service.Vacancies.Application.Services
 {
-    public class UpdateVacancyByEventService : IUpdateVacancyByEventService
+    public class UpdateCompanyEventService : IUpdateCompanyEventService
     {
         private readonly IRepository<Company> _companyRepository;
-        private readonly ILogger<UpdateVacancyByEventService> _logger;
+        private readonly ILogger<UpdateCompanyEventService> _logger;
 
-        public UpdateVacancyByEventService(IRepository<Company> companyRepository, ILogger<UpdateVacancyByEventService> logger)
+        public UpdateCompanyEventService(IRepository<Company> companyRepository, ILogger<UpdateCompanyEventService> logger)
         {
             _companyRepository = companyRepository;
             _logger = logger;
         }
 
-        public async Task UpdateByCompanyEventAsync(Guid companyId, string companyName, string? companyDisplayName, CancellationToken cancellationToken)
+        public async Task UpdateCompanyEventAsync(Guid companyId, string companyName, string? companyDisplayName, CancellationToken cancellationToken)
         {
             var existingCompany = await _companyRepository.FindOneAsync(new WithId<Company>(companyId), cancellationToken);
 

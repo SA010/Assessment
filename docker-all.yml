@@ -1,7 +1,6 @@
 version: '3.3'
 volumes:
     mssql:
-    #azurite:
     rabbitmq:
 services:
     mssql:
@@ -17,16 +16,6 @@ services:
         image: mcr.microsoft.com/mssql/server:2019-latest
         networks: 
             - sagnetwork
-    # azurite:
-    #     ports:
-    #         - '10000-10002:10000-10002'
-    #     container_name: azurite
-    #     restart: always
-    #     volumes:
-    #         - 'azurite:/data'
-    #     image: mcr.microsoft.com/azure-storage/azurite:3.29.0
-    #     networks: 
-    #         - sagnetwork
     rabbitmq:
         ports:
             - '5672:5672'
@@ -63,6 +52,17 @@ services:
         container_name: company
         restart: always
         image: sa010/sag-company-service-api:latest
+        networks: 
+            - sagnetwork
+        environment:
+           - 'ASPNETCORE_ENVIRONMENT=Docker'
+        depends_on:
+           - mssql
+           - rabbitmq
+    vacancy-esbworker:
+        container_name: vacancy-esbworker
+        restart: always
+        image: sa010/sag-vacancy-service-esbworkers:latest
         networks: 
             - sagnetwork
         environment:

@@ -77,7 +77,9 @@ namespace Sag.Service.Vacancies.Api
 
             services.AddScoped<IVacancyService, VacancyService>();
 
-            services.AddScoped<IUpdateVacancyByEventService, UpdateVacancyByEventService>();
+            services.AddScoped<IUpdateCompanyEventService, UpdateCompanyEventService>();
+
+            services.AddScoped<ICreateCompanyEventService, CreateCompanyEventService>();
         }
 
         private static void AddCrudServices(IServiceCollection services)

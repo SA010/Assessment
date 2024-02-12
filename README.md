@@ -20,8 +20,9 @@ The docker-all.yml file configures the following services:
 
 * sa010/sag-company-service-api - A sample company service. The code is located in .\CompanyService\.
 * sa010/sag-vacancy-service-api - A sample vacancy service. The code is located in .\VacancyService\.
-* MS SQL server 2019 - The database service.
-* RabbitMQ - The message broker service.
+* sa010/sag-vacancy-service-esbworkers - A .NET Core background service that listens to RabbitMQ for updates from CompanyService and synchronizes Company data within a Vacancy microservice.
+* MS SQL server 2019 - The database used for data persistence.
+* RabbitMQ - The message broker service for communication between services.
 
 ## Source Code
 
