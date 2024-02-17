@@ -4,6 +4,10 @@ using Polly.Retry;
 using Sag.Service.Vacancies.Infrastructure.EntityFramework;
 using Sag.Framework.Logging;
 using Sag.Framework.ESB.Extensions;
+using Serilog.Sinks.Elasticsearch;
+using Serilog.Sinks.File;
+using Serilog;
+using Serilog.Formatting.Json;
 
 namespace Sag.Service.Vacancies.Api
 {
@@ -37,7 +41,16 @@ namespace Sag.Service.Vacancies.Api
                         .ConfigureKestrel(options => options.AddServerHeader = false)
                         .UseStartup<Startup>();
                 })
-                .UseSagLogging()
+                 .UseSagLogging((context, configuration) => configuration
+                    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions()
+                    {
+                        FailureCallback = e => Console.WriteLine("SAG  - Unable to submit event " + e.MessageTemplate + e.RenderMessage()),
+                        EmitEventFailure = EmitEventFailureHandling.WriteToSelfLog |
+                                            EmitEventFailureHandling.WriteToFailureSink |
+                                            EmitEventFailureHandling.RaiseCallback,
+                        FailureSink = new FileSink("./failures.txt", new JsonFormatter(), null)
+                    })
+                 )
                 .ConfigureAppConfiguration((_, builder) => { builder.AddJsonFile("appsettings.local.json", true, true); });
         }
     }

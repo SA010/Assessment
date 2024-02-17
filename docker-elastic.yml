@@ -1,0 +1,43 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.4.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+    networks:
+      - sagnetwork
+    cpus: 2.0
+    mem_limit: 8g
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.4.0
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - xpack.security.enabled=false
+    ports:
+      - "5601:5601"
+    networks:
+      - sagnetwork
+    depends_on:
+      - elasticsearch
+    cpus: 2.0
+    mem_limit: 4g
+
+volumes:
+  esdata:
+    driver: local
+
+networks: 
+  sagnetwork:
+    external: true
