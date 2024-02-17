@@ -46,3 +46,12 @@ The services are designed to follow RESTful principles, ensuring that the API is
 
 * SpecFlow for API tests.
 * xUnit for unit testing of the service components.
+
+## Logging with Elasticsearch and Kibana
+
+To see the logs in action run the Elastic container using the following command
+
+```bash
+docker compose -f .\docker-elastic.yml up -d
+```
+> ⚠️ **Warning:**  This has dependencies on the `docker-all.yml`, so ensure that `docker-all.yml` is running before you start the Elasticsearch container.
