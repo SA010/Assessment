@@ -1,8 +1,6 @@
-# Sample Microservices and Angular App
+# Sample Microservices
 
 This repository contains sample code to demonstrate a microservices architecture using Angular for the frontend.
-
->  **Note:** The Angular App will be added in the next few days.
 
 ## Running the Application
 
