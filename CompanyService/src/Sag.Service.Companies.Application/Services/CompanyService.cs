@@ -72,5 +72,10 @@ namespace Sag.Service.Companies.Application.Services
             await _companyCrudService.DeleteAsync(id, cancellationToken);
             _companyEventHandler.Publish(company, ESBAction.Delete);
         }
+
+        public async Task<IReadOnlyCollection<CompanyDto>> GetAsync(CancellationToken cancellationToken)
+        {
+            return await _companyCrudService.GetAsync(new All<Company>() ,cancellationToken);
+        }
     }
 }

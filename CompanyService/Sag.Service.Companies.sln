@@ -49,11 +49,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sag.Service.Companies.Api.Specs", "test\Sag.Service.Companies.Api.Specs\Sag.Service.Companies.Api.Specs.csproj", "{379CDAF1-BD8A-4090-97B3-5215F0559A4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sag.Service.Companies.Application", "src\Sag.Service.Companies.Application\Sag.Service.Companies.Application.csproj", "{46BEB4E3-DE3B-4783-BEF1-241242219039}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sag.Service.Companies.Application", "src\Sag.Service.Companies.Application\Sag.Service.Companies.Application.csproj", "{46BEB4E3-DE3B-4783-BEF1-241242219039}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sag.Service.Companies.Domain", "src\Sag.Service.Companies.Domain\Sag.Service.Companies.Domain.csproj", "{EEEA9B92-9FDC-41E3-B424-134742A9CB32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sag.Service.Companies.Domain", "src\Sag.Service.Companies.Domain\Sag.Service.Companies.Domain.csproj", "{EEEA9B92-9FDC-41E3-B424-134742A9CB32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sag.Service.Companies.Infrastructure", "src\Sag.Service.Companies.Infrastructure\Sag.Service.Companies.Infrastructure.csproj", "{FCF7ADCB-AC9C-4B72-BF21-63FF6FFB889B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sag.Service.Companies.Infrastructure", "src\Sag.Service.Companies.Infrastructure\Sag.Service.Companies.Infrastructure.csproj", "{FCF7ADCB-AC9C-4B72-BF21-63FF6FFB889B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

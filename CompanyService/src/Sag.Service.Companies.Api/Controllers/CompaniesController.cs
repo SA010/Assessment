@@ -15,6 +15,18 @@ namespace Sag.Service.Companies.Api.Controllers
         }
 
         /// <summary>
+        /// Endpoint to get all companies
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        [HttpGet(Name = nameof(GetCompaniesAsync))]
+        [ProducesResponseType(typeof(ICollection<CompanyDto>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetCompaniesAsync(CancellationToken cancellationToken = default)
+        {
+            // Add filter and pagination in a real-world scenario
+            return Ok(await _companyService.GetAsync(cancellationToken));
+        }
+
+        /// <summary>
         /// Endpoint to get a company by id
         /// </summary>
         /// <param name="id">The id of the company</param>
@@ -34,7 +46,6 @@ namespace Sag.Service.Companies.Api.Controllers
         /// <param name="cancellationToken"></param>
         [ProducesResponseType(typeof(CompanyDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status409Conflict)]
         [HttpPost(Name = nameof(CreateCompanyAsync))]
         public async Task<IActionResult> CreateCompanyAsync([FromBody] CompanyDto dto, CancellationToken cancellationToken)

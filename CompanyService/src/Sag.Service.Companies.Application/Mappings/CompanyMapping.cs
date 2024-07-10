@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Sag.Framework.EntityFramework.Domain.Common;
 
 namespace Sag.Service.Companies.Application.Mappings
 {

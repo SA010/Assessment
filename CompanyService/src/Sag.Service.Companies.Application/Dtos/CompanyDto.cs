@@ -1,6 +1,4 @@
-﻿using Sag.Framework.EntityFramework.Domain.Common;
-
-namespace Sag.Service.Companies.Application.Dtos
+﻿namespace Sag.Service.Companies.Application.Dtos
 {
     public class CompanyDto : Dto<Company>
     {
