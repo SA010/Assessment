@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D84AF897-D307-42E7-893F-CD7D24BCC589}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CE177DDD-6653-4229-AB81-FE0147EFD154}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02A405E7-2E22-4B50-BA45-47D34459414E}"
+	ProjectSection(SolutionItems) = preProject
+		..\aks-base-image-pipeline.yml = ..\aks-base-image-pipeline.yml
+		..\aks-cd-pipelines.yml = ..\aks-cd-pipelines.yml
+		..\aks-ci-pipelines.yml = ..\aks-ci-pipelines.yml
+		..\aks-hotfix-pipeline.yml = ..\aks-hotfix-pipeline.yml
+		..\aks-pr-build-pipeline.yml = ..\aks-pr-build-pipeline.yml
+		..\aks-pr-complete-pipeline.yml = ..\aks-pr-complete-pipeline.yml
+		..\aks-pr-deploy-pipeline.yml = ..\aks-pr-deploy-pipeline.yml
+		..\aks-variables.yml = ..\aks-variables.yml
+		Directory.Build.props = Directory.Build.props
+		..\Dockerfile-Backend = ..\Dockerfile-Backend
+		..\Dockerfile-Backend.build-test = ..\Dockerfile-Backend.build-test
+		..\.template.config\template.json = ..\.template.config\template.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sag.SampleBFF.Api.Api", "src\Sag.SampleBFF.Api.Api\Sag.SampleBFF.Api.Api.csproj", "{0EC75B95-E0F4-470B-80A9-DEDB943EB8A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sag.SampleBFF.Api.Api.Tests", "test\Sag.SampleBFF.Api.Api.Tests\Sag.SampleBFF.Api.Api.Tests.csproj", "{CF7E74D8-87A3-4DE4-B476-DE71B4F47E30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{CF06F071-AD00-4843-B4E8-BC5FDED322E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helm", "Helm", "{5D4B2FA3-8E6F-44C3-BEAE-B832F5C9917B}"
+	ProjectSection(SolutionItems) = preProject
+		..\Deployment\Helm\.helmignore = ..\Deployment\Helm\.helmignore
+		..\Deployment\Helm\Chart.yaml = ..\Deployment\Helm\Chart.yaml
+		..\Deployment\Helm\values.yaml = ..\Deployment\Helm\values.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{3E0681D2-7F26-4612-8E57-803DC80F2367}"
+	ProjectSection(SolutionItems) = preProject
+		..\Deployment\Helm\templates\certificates.yaml = ..\Deployment\Helm\templates\certificates.yaml
+		..\Deployment\Helm\templates\configmaps.yaml = ..\Deployment\Helm\templates\configmaps.yaml
+		..\Deployment\Helm\templates\deployment-api.yaml = ..\Deployment\Helm\templates\deployment-api.yaml
+		..\Deployment\Helm\templates\gateway.yaml = ..\Deployment\Helm\templates\gateway.yaml
+		..\Deployment\Helm\templates\namespace.yaml = ..\Deployment\Helm\templates\namespace.yaml
+		..\Deployment\Helm\templates\secrets.yaml = ..\Deployment\Helm\templates\secrets.yaml
+		..\Deployment\Helm\templates\_helpers.tpl = ..\Deployment\Helm\templates\_helpers.tpl
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sag.SampleBFF.Api.Api.Specs", "test\Sag.SampleBFF.Api.Api.Specs\Sag.SampleBFF.Api.Api.Specs.csproj", "{379CDAF1-BD8A-4090-97B3-5215F0559A4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EC75B95-E0F4-470B-80A9-DEDB943EB8A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC75B95-E0F4-470B-80A9-DEDB943EB8A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC75B95-E0F4-470B-80A9-DEDB943EB8A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC75B95-E0F4-470B-80A9-DEDB943EB8A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF7E74D8-87A3-4DE4-B476-DE71B4F47E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7E74D8-87A3-4DE4-B476-DE71B4F47E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7E74D8-87A3-4DE4-B476-DE71B4F47E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7E74D8-87A3-4DE4-B476-DE71B4F47E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{379CDAF1-BD8A-4090-97B3-5215F0559A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379CDAF1-BD8A-4090-97B3-5215F0559A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379CDAF1-BD8A-4090-97B3-5215F0559A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379CDAF1-BD8A-4090-97B3-5215F0559A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0EC75B95-E0F4-470B-80A9-DEDB943EB8A9} = {D84AF897-D307-42E7-893F-CD7D24BCC589}
+		{CF7E74D8-87A3-4DE4-B476-DE71B4F47E30} = {CE177DDD-6653-4229-AB81-FE0147EFD154}
+		{CF06F071-AD00-4843-B4E8-BC5FDED322E1} = {02A405E7-2E22-4B50-BA45-47D34459414E}
+		{5D4B2FA3-8E6F-44C3-BEAE-B832F5C9917B} = {CF06F071-AD00-4843-B4E8-BC5FDED322E1}
+		{3E0681D2-7F26-4612-8E57-803DC80F2367} = {5D4B2FA3-8E6F-44C3-BEAE-B832F5C9917B}
+		{379CDAF1-BD8A-4090-97B3-5215F0559A4A} = {CE177DDD-6653-4229-AB81-FE0147EFD154}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9347BF08-9A0C-48F9-80F2-853EED712533}
+	EndGlobalSection
+EndGlobal

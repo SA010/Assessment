@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+ENV ASPNETCORE_ENVIRONMENT Docker
+WORKDIR /app
+COPY /Backend/out .
+ENTRYPOINT ["dotnet", "Sag.SampleBFF.Api.Api.dll"]

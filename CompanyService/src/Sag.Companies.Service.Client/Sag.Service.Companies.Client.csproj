@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <IsPackable>true</IsPackable>
+
+	  <PackageId>Sag.Service.Companies.Client</PackageId>
+	  <Authors>SAG Software</Authors>
+	  <Company>SAG</Company>
+	  <Product>SAG Company Service</Product>
+	  <Copyright>Copyright © SAG 2024</Copyright>
+	  <Description>SAG Company Service SDK.</Description>
+	  <Summary>SAG Company SDK.</Summary>
+	  <IncludeSymbols>True</IncludeSymbols>
+	  <PackageTags>core;aspnet;net;identity;client;service;sag</PackageTags>
+	  <RepositoryType>git</RepositoryType>
+	  <RepositoryUrl>https://dev.azure.com/SagSoftware/SagServices/_git/CompanyService</RepositoryUrl>
+	  <DebugType>Full</DebugType>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<OpenApiReference Include="OpenAPIs\SagCompanies.json" CodeGenerator="NSwagCSharp">
+			<Namespace>Sag.Service.Companies.Client</Namespace>
+			<ClassName>SagCompanyServiceClient</ClassName>
+			<Options>/GenerateClientInterfaces:true /DateTimeType:System.DateTime /UseBaseUrl:false /OperationGenerationMode:MultipleClientsFromOperationId /ExcludedTypeNames:ApiError,Error,ErrorDetails /AdditionalNamespaceUsages:Sag.Framework.Exceptions,Sag.Framework.ExceptionHandlers /GenerateExceptionClasses:false</Options>
+			<SourceUri>http://localhost:5130/swagger/v1/swagger.json</SourceUri>
+		</OpenApiReference>
+	</ItemGroup>
+
+	<Target Name="RemoveSwaggerClient" BeforeTargets="BeforeBuild">
+		<Delete Files="$(ProjectDir)obj\SagCompaniesClient.cs">
+			<Output TaskParameter="DeletedFiles" ItemName="DeletedList" />
+		</Delete>
+		<Message Text="Cleaned up @(DeletedList)" Importance="high" />
+	</Target>
+
+	<ItemGroup>
+		<PackageReference Include="Sag.Framework" Version="1.0.0"></PackageReference>
+		<PackageReference Include="Microsoft.Extensions.ApiDescription.Client" Version="7.0.9">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
+		<PackageReference Include="NSwag.ApiDescription.Client" Version="13.19.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="OpenAPIs\" />
+	</ItemGroup>
+
+
+</Project>
