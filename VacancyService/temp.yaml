@@ -1,0 +1,49 @@
+version: '3.3'
+volumes:
+    mssql:
+    azurite:
+    rabbitmq:
+services:
+    mssql:
+        ports:
+            - '1433:1433'
+        container_name: mssql
+        restart: always
+        volumes:
+            - 'mssql:/var/opt/mssql'
+        environment:
+            - 'ACCEPT_EULA=Y'
+            - 'SA_PASSWORD=localDevPassword!1'
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        networks: 
+            - sagnetwork
+    azurite:
+        ports:
+            - '10000-10002:10000-10002'
+        container_name: azurite
+        restart: always
+        volumes:
+            - 'azurite:/data'
+        image: mcr.microsoft.com/azure-storage/azurite:3.29.0
+        networks: 
+            - sagnetwork
+    rabbitmq:
+        ports:
+            - '5672:5672'
+            - '8080:15672'
+            - '15672:15672'
+            - '15692:15692'
+            - '25672:25672'
+        container_name: rabbitmq
+        restart: always
+        volumes:
+            - 'rabbitmq:/var/lib/rabbitmq'
+        environment:
+            - 'RABBITMQ_DEFAULT_PASS=password'
+            - 'RABBITMQ_DEFAULT_USER=user'
+        image: rabbitmq:3-management
+        networks: 
+            - sagnetwork
+networks: 
+    sagnetwork:
+        name: sagnetwork
